@@ -72,77 +72,82 @@
             </svg>
         </td>
         <td>
-            <table class="input">
-                <tr>
-                    <td id="x-selector" class="selector">
-                        <label for="x-select">X value:</label>
-                        <select name="x-select" id="x-select" required>
-                            <option value="">Choose an option</option>
-                            <option value="-4">-4</option>
-                            <option value="-3">-3</option>
-                            <option value="-2">-2</option>
-                            <option value="-1">-1</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="y-text" id="Y">
-                        <label>
-                            Y value:
-                            <input id="y-text" class="y-text-input" type="text" name="y" placeholder="(-5;5)"
-                                   maxlength="10"
-                                   required>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            R value:
-                        </label>
-                        <div class="radio">
-                            <input id="radio-1" type="radio" name="r-group" value="1" required>
-                            <label for="radio-1">1</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-2" type="radio" name="r-group" value="1,5">
-                            <label for="radio-2">1,5</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-3" type="radio" name="r-group" value="2">
-                            <label for="radio-3">2</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-4" type="radio" name="r-group" value="2,5">
-                            <label for="radio-4">2,5</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-5" type="radio" name="r-group" value="3">
-                            <label for="radio-5">3</label>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td id="submit-container" class="margin">
-                        <input type="submit" id="submit-button" value="Submit">
-                    </td>
-                </tr>
+            <form id="coordinates-form">
+                <table class="input">
+                    <tr>
+                        <td id="x-selector" class="selector">
 
+                            <label for="x-select">X value:</label>
+                            <select name="x-select" id="x-select" required>
+                                <option value="">Choose an option</option>
+                                <option value="-4">-4</option>
+                                <option value="-3">-3</option>
+                                <option value="-2">-2</option>
+                                <option value="-1">-1</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="y-text" id="Y">
+                            <label>
+                                Y value:
+                                <input id="y-text" class="y-text-input" type="text" name="y" placeholder="(-5;5)"
+                                       maxlength="10"
+                                       required>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                R value:
+                            </label>
+                            <div class="radio">
+                                <input id="radio-1" type="radio" name="r-group" value="1" required>
+                                <label for="radio-1">1</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-2" type="radio" name="r-group" value="1,5">
+                                <label for="radio-2">1,5</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-3" type="radio" name="r-group" value="2">
+                                <label for="radio-3">2</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-4" type="radio" name="r-group" value="2,5">
+                                <label for="radio-4">2,5</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-5" type="radio" name="r-group" value="3">
+                                <label for="radio-5">3</label>
+                            </div>
 
-            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div id="check-button" class="check-b">
+                                <input type="submit" id="submit-button" value="Submit">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
         </td>
+
     </tr>
     </tbody>
 </table>
 <div id="graph-container" class="blurred-container round-container margin">
     <canvas id="graph" width="500px" height="500px"></canvas>
 </div>
-<div id="result-table-container" class="blured-container margin">
+<div id="result-table-container" class="blurred-container margin">
     <table id="result-table">
         <thead>
         <tr>
