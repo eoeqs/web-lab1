@@ -17,7 +17,7 @@
     </span>
     </div>
 </header>
-<table class="all-tables">
+<table class="main-table">
     <tbody>
     <tr class="graph">
         <td>
@@ -105,21 +105,26 @@
                         <label>
                             R value:
                         </label>
-
-                        <input id="radio-1" type="radio" name="r-group" value="1" required>
-                        <label for="radio-1">1</label>
-
-                        <input id="radio-2" type="radio" name="r-group" value="1,5">
-                        <label for="radio-2">1,5</label>
-
-                        <input id="radio-3" type="radio" name="r-group" value="2">
-                        <label for="radio-3">2</label>
-
-                        <input id="radio-4" type="radio" name="r-group" value="2,5">
-                        <label for="radio-4">2,5</label>
-
-                        <input id="radio-5" type="radio" name="r-group" value="3">
-                        <label for="radio-5">3</label>
+                        <div class="radio">
+                            <input id="radio-1" type="radio" name="r-group" value="1" required>
+                            <label for="radio-1">1</label>
+                        </div>
+                        <div class="radio">
+                            <input id="radio-2" type="radio" name="r-group" value="1,5">
+                            <label for="radio-2">1,5</label>
+                        </div>
+                        <div class="radio">
+                            <input id="radio-3" type="radio" name="r-group" value="2">
+                            <label for="radio-3">2</label>
+                        </div>
+                        <div class="radio">
+                            <input id="radio-4" type="radio" name="r-group" value="2,5">
+                            <label for="radio-4">2,5</label>
+                        </div>
+                        <div class="radio">
+                            <input id="radio-5" type="radio" name="r-group" value="3">
+                            <label for="radio-5">3</label>
+                        </div>
                     </td>
                 </tr>
                 <tr>
@@ -129,10 +134,10 @@
                 </tr>
 
 
-</table>
-</td>
-</tr>
-</tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
 </table>
 <div id="graph-container" class="blurred-container round-container margin">
     <canvas id="graph" width="500px" height="500px"></canvas>
