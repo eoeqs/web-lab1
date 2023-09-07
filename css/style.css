@@ -1,10 +1,41 @@
+* {
+    font-family: monospace;
+    font-weight: normal;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
     background: floralwhite;
 }
-button{
+
+header {
+    text-align: center;
+    font-size: large;
+    top: 0;
+}
+
+footer {
+    bottom: 0
+}
+
+header,
+footer {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    color: black;
+    background-color: lavender;
+    left: 0;
+}
+
+tr * {
+    margin-top: 4%
+}
+
+td * {
+    margin-bottom: 4%
+}
+
+button {
     color: white;
     margin: 20px 5px 0;
     border-radius: 6px;
