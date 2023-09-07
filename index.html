@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+
+    <title>eoeqs-web1</title>
+</head>
+
+<body>
+<header class="header">
+    <div>
+    <span>
+        Иванова Александра, P3218
+    </span>
+        <span>
+        Вариант 2804
+    </span>
+    </div>
+</header>
+<table class="all-tables">
+    <tr class="graph">
+        <td>
+            <svg height="400" width="400" xmlns="http://www.w3.org/2000/svg">
+                <!-- оси -->
+                <line stroke="black" x1="0" x2="400" y1="200" y2="200"></line>
+                <line stroke="black" x1="200" x2="200" y1="0" y2="400"></line>
+                <polygon fill="black" points="200,0 195,30 205,30" stroke="black"></polygon>
+                <polygon fill="black" points="400,200 370,195 370,205" stroke="black"></polygon>
+                <!-- деления -->
+                <line stroke="black" x1="330" x2="330" y1="210" y2="190"></line>
+                <line stroke="black" x1="265" x2="265" y1="210" y2="190"></line>
+
+                <line stroke="black" x1="70" x2="70" y1="210" y2="190"></line>
+                <line stroke="black" x1="135" x2="135" y1="210" y2="190"></line>
+
+                <line stroke="black" x1="190" x2="210" y1="135" y2="135"></line>
+                <line stroke="black" x1="210" x2="190" y1="70" y2="70"></line>
+
+                <line stroke="black" x1="190" x2="210" y1="265" y2="265"></line>
+                <line stroke="black" x1="210" x2="190" y1="330" y2="330"></line>
+                <!-- подписи -->
+                <text fill="black" x="255" y="180">R/2</text>
+                <text fill="black" x="325" y="180">R</text>
+
+                <text fill="black" x="60" y="180">-R</text>
+                <text fill="black" x="120" y="180">-R/2</text>
+
+                <text fill="black" x="215" y="75">R</text>
+                <text fill="black" x="215" y="140">R/2</text>
+
+                <text fill="black" x="215" y="270">-R/2</text>
+                <text fill="black" x="215" y="335">-R</text>
+
+                <text fill="black" x="385" y="190">X</text>
+                <text fill="black" x="210" y="15">Y</text>
+                <!-- фигуры -->
+                <polygon fill="blue"
+                         fill-opacity="0.2"
+                         stroke="blue"
+                         points="135,200 135,70 200,70 200,200"></polygon>
+                <path fill="blue"
+                      fill-opacity="0.2"
+                      stroke="blue"
+                      d="M 200 70 C 330 70, 330 200, 330 200 L 200 200 Z"></path>
+                <polygon fill="blue"
+                         fill-opacity="0.2"
+                         points="70,200 200,200 200,330"
+                         stroke="blue"></polygon>
+            </svg>
+        </td>
+        <td>
+            <form id="coordinates-form">
+                <div id="x-selector" class="selector">
+                    <label for="x-select">X value:</label>
+                    <select name="x-select" id="x-select" required>
+                        <option value="">Choose an option</option>
+                        <option value="-4">-4</option>
+                        <option value="-3">-3</option>
+                        <option value="-2">-2</option>
+                        <option value="-1">-1</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="y-text" id="Y">
+                    <label>
+                        Y value:
+                        <input id="y-text" class="y-text-input" type="text" name="y" placeholder="(-5;5)" maxlength="10"
+                               required>
+                    </label>
+                </div>
+                R value:
+                <div class="r-radio">
+                    <input id="radio-1" type="radio" name="r-group" value="1" required>
+                    <label for="radio-1">1</label>
+                </div>
+                <div class="r-radio">
+                    <input id="radio-2" type="radio" name="r-group" value="1,5">
+                    <label for="radio-2">1,5</label>
+                </div>
+                <div class="r-radio">
+                    <input id="radio-3" type="radio" name="r-group" value="2">
+                    <label for="radio-3">2</label>
+                </div>
+                <div class="r-radio">
+                    <input id="radio-4" type="radio" name="r-group" value="2,5">
+                    <label for="radio-4">2,5</label>
+                </div>
+                <div class="r-radio">
+                    <input id="radio-5" type="radio" name="r-group" value="3">
+                    <label for="radio-5">3</label>
+                </div>
+                <div id="submit-container" class="margin">
+                    <input type="submit" id="submit-button" value="Submit">
+                </div>
+            </form>
+        </td>
+    </tr>
+</table>
+<div id="graph-container" class="blurred-container round-container margin">
+    <canvas id="graph" width="500px" height="500px"></canvas>
+</div>
+<div id="result-table-container" class="blured-container margin">
+    <table id="result-table">
+        <thead>
+        <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>R</th>
+            <th>Result</th>
+            <th>Executed at</th>
+            <th>Execution time</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+</body>
+
+</html>
