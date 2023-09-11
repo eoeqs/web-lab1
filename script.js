@@ -1,4 +1,6 @@
 let x, y, r;
+table = document.getElementById("result");
+table = document.getElementById("result");
 
 window.onload = function () {
     function setOnClick(element) {
@@ -22,27 +24,19 @@ window.onload = function () {
 
 document.getElementById("check-button").onclick = function () {
     if (validateX() && validateY() && validateR()) {
-        const coordinates = {
-            x: x,
-            y: y,
-            r: r,
-            timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
-        };
+        $.ajax({
+            type: "POST",
+            url: "/php/script.php",
+            dataType: "html",
+            data: "&x=" + x +
+                "&y=" + y +
+                "&r=" + r +
+                "&timezone" + new Date().toTimeString(),
 
-        fetch("./php/script.php?", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json; charset=UTF-8"
-            },
-            body: JSON.stringify(coordinates)
-        })
-            .then(response => response.text())
-            .then(function (serverAnswer) {
-                setPointer(serverAnswer);
-                localStorage.setItem("session", serverAnswer);
-                document.getElementById("outputContainer").innerHTML = serverAnswer;
-            })
-            .catch(err => alert("HTTP error " + err.status + ". Try again later. " + err));
+            success: function (data) {
+                table.innerHTML += data
+            }
+        });
     }
 };
 
@@ -61,11 +55,13 @@ function setPointer(serverAnswer) {
 }
 
 function validateX() {
-    x = document.getElementById("x-select")[0].value;
+    x = document.getElementById("x-select").value;
+
     if (x.value === "") {
         alert("X value is not selected");
         return false;
     } else return true;
+
 }
 
 function validateY() {
@@ -84,7 +80,7 @@ function validateY() {
 
 function validateR() {
     try {
-        x = document.querySelector("input[type=radio]:checked").value;
+        r = document.querySelector("input[type=radio]:checked").value;
         return true;
     } catch (err) {
         alert("The R value is not selected");
@@ -95,4 +91,5 @@ function validateR() {
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
+
 

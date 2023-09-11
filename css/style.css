@@ -27,6 +27,19 @@ footer {
     left: 0;
 }
 
+table[id=result] {
+    border-collapse: collapse;
+    border: 1px solid grey;
+
+}
+thead[id=result-head] {
+    border: 1px solid grey;
+    width: 6px;
+}
+th {
+    border: 1px solid grey;
+    width: 6px;
+}
 tr * {
     margin-top: 4%
 }

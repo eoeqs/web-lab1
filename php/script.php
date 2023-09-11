@@ -9,13 +9,6 @@ if (!isset($_SESSION["results"])) {
     $_SESSION["results"] = array();
 }
 
-if ($_SERVER["request-method"] != "POST") {
-    http_response_code(405);
-    return;
-}
-
-date_default_timezone_set($_POST["timezone"]);
-
 $x = (float)$_POST["x"];
 $y = (float)$_POST["y"];
 $r = (float)$_POST["r"];
@@ -38,17 +31,10 @@ if ($validator->checkData()) {
         "currentTime" => $currentTime,
         "benchmarkTime" => $benchmarkTime
     );
-    $_SESSION["results"][] = $newResult;
 
-    echo "<table id='outputTable'>
-        <tr>
-            <th>x</th>
-            <th>y</th>
-            <th>r</th>
-            <th>Result</th>
-            <th>Executed at</th>
-            <th>Execution time</th>
-        </tr>";
+    array_push($_SESSION["results"], $newResult);
+
+
 
     foreach (array_reverse($_SESSION["results"]) as $tableRow) {
         echo "<tr>";
@@ -64,5 +50,6 @@ if ($validator->checkData()) {
 } else {
     http_response_code(422);
     return;
-}
 
+}
+session_destroy();
