@@ -72,11 +72,19 @@ svg {
     border: solid mediumpurple;
 }
 
+#checkButton::after {
+    content: "";
+    background: #eb2a5a;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
 
-.check-b:active::after {
-    padding: 0;
-    margin: 0;
-    opacity: 1;
-    transform: rotate(160deg);
-    transition: 3s
+div span {
+    background-blend-mode: normal;
 }

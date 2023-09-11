@@ -2,7 +2,7 @@
 
 class AreaChecker
 {
-    public static function checkArea($x, $y, $r)
+    public static function isInArea($x, $y, $r)
     {
         //1st quadrant
         if ($x >= 0 && $y > 0) {

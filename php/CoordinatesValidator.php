@@ -1,6 +1,6 @@
 <?php
 
-class Coordinatesvalidator
+class CoordinatesValidator
 {
     private $x;
     private $y;

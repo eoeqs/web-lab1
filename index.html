@@ -9,18 +9,21 @@
 <body>
 <header class="header">
     <div>
-    <span>
         Иванова Александра, P3218
-    </span>
-        <span>
+    </div>
+    <div>
         Вариант 2804
-    </span>
     </div>
 </header>
-<table class="main-table">
+<table id="main-table" class="shaded">
     <tbody>
-    <tr class="graph">
-        <td>
+    <tr>
+        <td colspan="5">
+            <hr>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="6">
             <svg height="400" width="400" xmlns="http://www.w3.org/2000/svg">
                 <!-- оси -->
                 <line stroke="black" x1="0" x2="400" y1="200" y2="200"></line>
@@ -67,18 +70,18 @@
                          fill-opacity="0.2"
                          points="70,200 200,200 200,330"
                          stroke="blue"></polygon>
-                <circle id="pointer" r="5" cx="150" cy="150" fill-opacity="0.7" fill="red" stroke="firebrick"
+                <circle id="pointer" r="5" cx="200" cy="200" fill-opacity="0.7" fill="black" stroke="firebrick"
                         visibility="hidden"></circle>
             </svg>
         </td>
         <td>
-            <form id="coordinates-form">
+
                 <table class="input">
                     <tr>
                         <td id="x-selector" class="selector">
 
                             <label for="x-select">X value:</label>
-                            <select name="x-select" id="x-select" required>
+                            <select name="x-select" id="x-select">
                                 <option value="">Choose an option</option>
                                 <option value="-4">-4</option>
                                 <option value="-3">-3</option>
@@ -96,9 +99,10 @@
                         <td class="y-text" id="Y">
                             <label>
                                 Y value:
-                                <input id="y-text" class="y-text-input" type="text" name="y" placeholder="(-5;5)"
+                                <input id="y-text" name="Y-input" class="y-text-input" type="text" name="y"
+                                       placeholder="(-5;5)"
                                        maxlength="10"
-                                       required>
+                                >
                             </label>
                         </td>
                     </tr>
@@ -108,7 +112,7 @@
                                 R value:
                             </label>
                             <div class="radio">
-                                <input id="radio-1" type="radio" name="r-group" value="1" required>
+                                <input id="radio-1" type="radio" name="r-group" value="1">
                                 <label for="radio-1">1</label>
                             </div>
                             <div class="radio">
@@ -132,36 +136,27 @@
                     </tr>
                     <tr>
                         <td>
-                            <div id="check-button" class="check-b">
-                                <input type="submit" id="submit-button" value="Submit">
-                            </div>
+                            <button id="check-button">Check</button>
                         </td>
                     </tr>
                 </table>
-            </form>
+
         </td>
 
     </tr>
     </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="5" id="outputContainer">
+            <h4>
+                <span class="outputStub notification">No results yet</span>
+            </h4>
+        </td>
+    </tr>
+    </tfoot>
 </table>
-<div id="graph-container" class="blurred-container round-container margin">
-    <canvas id="graph" width="500px" height="500px"></canvas>
-</div>
-<div id="result-table-container" class="blurred-container margin">
-    <table id="result-table">
-        <thead>
-        <tr>
-            <th>X</th>
-            <th>Y</th>
-            <th>R</th>
-            <th>Result</th>
-            <th>Executed at</th>
-            <th>Execution time</th>
-        </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-</div>
+
+<script src="script.js"></script>
 </body>
 
 </html>
