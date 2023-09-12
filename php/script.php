@@ -50,4 +50,4 @@ if ($validator->checkData()) {
     return;
 
 }
-session_destroy();
+
