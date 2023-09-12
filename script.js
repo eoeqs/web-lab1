@@ -1,6 +1,5 @@
 let x, y, r;
 table = document.getElementById("result");
-table = document.getElementById("result");
 
 window.onload = function () {
     function setOnClick(element) {
@@ -17,7 +16,7 @@ window.onload = function () {
 
     let buttons = document.querySelectorAll("input[name=R-button]");
     buttons.forEach(setOnClick);
-    document.getElementById("outputContainer").innerHTML = localStorage.getItem("session");
+    table.innerHTML = localStorage.getItem("results");
 
 };
 
@@ -35,29 +34,16 @@ document.getElementById("check-button").onclick = function () {
 
             success: function (data) {
                 table.innerHTML += data
+                localStorage.setItem("results", table.innerHTML)
             }
+
         });
     }
 };
 
-function setPointer(serverAnswer) {
-    const parser = new DOMParser();
-    const doc = parser.parseFromString(serverAnswer, "text/html");
-    const row = doc.querySelectorAll('tr')[1];
-    const cells = row.getElementsByTagName("td");
-    const last = cells[3];
-
-    let pointer = document.getElementById("pointer");
-    pointer.style.visibility = "visible";
-    pointer.style.fill = last.innerHTML.includes("success") ? "#09a53d" : "#a50909";
-    pointer.setAttribute("cx", x * 60 * 2 / r + 150);
-    pointer.setAttribute("cy", -y * 60 * 2 / r + 150);
-}
-
 function validateX() {
     x = document.getElementById("x-select").value;
-
-    if (x.value === "") {
+    if (x === "") {
         alert("X value is not selected");
         return false;
     } else return true;
@@ -66,8 +52,11 @@ function validateX() {
 
 function validateY() {
     y = document.querySelector("input[name=Y-input]").value.replace(",", ".");
-    if (y === undefined) {
+    if (y === "") {
         alert("The y parameter is not entered");
+        return false;
+    } else if (y === "+0" || y === "-0") {
+        alert("Zero cannot have a sign");
         return false;
     } else if (!isNumeric(y)) {
         alert("Y is not a number");

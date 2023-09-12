@@ -75,87 +75,81 @@
                         visibility="hidden"></circle>
             </svg>
         </td>
-        <td>
+        <form>
+            <td>
 
-            <table class="input">
-                <tr>
-                    <td id="x-selector" class="selector">
+                <table class="input">
+                    <tr>
+                        <td id="x-selector" class="selector">
 
-                        <label for="x-select">X value:</label>
-                        <select name="x-select" id="x-select">
-                            <option value="">Choose an option</option>
-                            <option value="-4">-4</option>
-                            <option value="-3">-3</option>
-                            <option value="-2">-2</option>
-                            <option value="-1">-1</option>
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="y-text" id="Y">
-                        <label>
-                            Y value:
-                            <input id="y-text" name="Y-input" class="y-text-input" type="text" name="y"
-                                   placeholder="(-5;5)"
-                                   maxlength="10"
-                            >
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            R value:
-                        </label>
-                        <div class="radio">
-                            <input id="radio-1" type="radio" name="r-group" value="1">
-                            <label for="radio-1">1</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-2" type="radio" name="r-group" value="1,5">
-                            <label for="radio-2">1,5</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-3" type="radio" name="r-group" value="2">
-                            <label for="radio-3">2</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-4" type="radio" name="r-group" value="2,5">
-                            <label for="radio-4">2,5</label>
-                        </div>
-                        <div class="radio">
-                            <input id="radio-5" type="radio" name="r-group" value="3">
-                            <label for="radio-5">3</label>
-                        </div>
+                            <label for="x-select">X value:</label>
+                            <select name="x-select" id="x-select">
+                                <option value="">Choose an option</option>
+                                <option value="-4">-4</option>
+                                <option value="-3">-3</option>
+                                <option value="-2">-2</option>
+                                <option value="-1">-1</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="y-text" id="Y">
+                            <label>
+                                Y value:
+                                <input id="y-text" name="Y-input" class="y-text-input" type="text"
+                                       placeholder="(-5;5)"
+                                       maxlength="10"
+                                >
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                                R value:
+                            </label>
+                            <div class="radio">
+                                <input id="radio-1" type="radio" name="r-group" value="1">
+                                <label for="radio-1">1</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-2" type="radio" name="r-group" value="1,5">
+                                <label for="radio-2">1,5</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-3" type="radio" name="r-group" value="2">
+                                <label for="radio-3">2</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-4" type="radio" name="r-group" value="2,5">
+                                <label for="radio-4">2,5</label>
+                            </div>
+                            <div class="radio">
+                                <input id="radio-5" type="radio" name="r-group" value="3">
+                                <label for="radio-5">3</label>
+                            </div>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button type="button" id="check-button">Check</button>
-                    </td>
-                </tr>
-            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="button" id="check-button">Check</button>
+                        </td>
+                    </tr>
+                </table>
 
-        </td>
-
+            </td>
+        </form>
     </tr>
     </tbody>
     <tfoot>
-    <tr>
-        <td colspan="5" id="outputContainer">
-            <h4>
-                <span class="outputStub notification">No results yet</span>
-            </h4>
-        </td>
-    </tr>
     <td colspan="2">
-        <table class="frontTables" id="result">
+        <table class="frontTables">
             <thead id="result-head">
             <tr>
                 <th>X</th>
@@ -166,7 +160,11 @@
                 <th>Execution Time</th>
             </tr>
             </thead>
+            <tbody id="result">
+
+            </tbody>
         </table>
+    </td>
     </tfoot>
 </table>
 

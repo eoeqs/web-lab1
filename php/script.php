@@ -34,8 +34,6 @@ if ($validator->checkData()) {
 
     array_push($_SESSION["results"], $newResult);
 
-
-
     foreach (array_reverse($_SESSION["results"]) as $tableRow) {
         echo "<tr>";
         echo "<td>" . $tableRow["x"] . "</td>";
